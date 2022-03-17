@@ -7,10 +7,10 @@
   "css.validate": false,
   "scss.validate": false,
   "[scss]": {
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
   "[sass]": {
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
   "editor.codeActionsOnSave": {
     ​"source.fixAll.eslint": true,
