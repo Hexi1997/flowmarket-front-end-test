@@ -21,23 +21,16 @@ const Demo: NextPage = () => {
   const { t, i18n } = useTranslation('common');
   const { theme, setTheme } = useTheme();
   const router = useRouter();
-  const handleLocaleChange = useCallback(
-    (data: string) => {
-      router
-        .replace(router.pathname, router.pathname, { locale: data })
-        .catch(console.error);
-    },
-    [router]
-  );
+  const handleLocaleChange = useCallback(() => {
+    router
+      .replace(router.pathname, router.pathname, {
+        locale: i18n.language === 'zh' ? 'en' : 'zh'
+      })
+      .catch(console.error);
+  }, [router, i18n]);
   return (
     <div className={styles.container}>
-      <button
-        onClick={() => {
-          handleLocaleChange(i18n.language === 'zh' ? 'en' : 'zh');
-        }}
-      >
-        {t('toggleLanguage')}
-      </button>
+      <button onClick={handleLocaleChange}>{t('toggleLanguage')}</button>
       <h1 className="text-3xl font-bold underline border-2 border-orange-500">
         Hello world!
       </h1>
