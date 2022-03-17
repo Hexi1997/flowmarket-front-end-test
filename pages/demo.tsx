@@ -4,6 +4,7 @@ import { GetStaticPropsContext, NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTheme } from 'next-themes';
+import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import styles from '@/styles/Demo.module.scss';
@@ -20,11 +21,14 @@ const Demo: NextPage = () => {
   const { t, i18n } = useTranslation('common');
   const { theme, setTheme } = useTheme();
   const router = useRouter();
-  const handleLocaleChange = (data: string) => {
-    router
-      .replace(router.pathname, router.pathname, { locale: data })
-      .catch(console.error);
-  };
+  const handleLocaleChange = useCallback(
+    (data: string) => {
+      router
+        .replace(router.pathname, router.pathname, { locale: data })
+        .catch(console.error);
+    },
+    [router]
+  );
   return (
     <div className={styles.container}>
       <button
