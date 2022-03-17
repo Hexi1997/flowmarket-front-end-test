@@ -4,8 +4,6 @@
   ],
   "prettier.configPath": ".prettierrc.js",
   "stylelint.enable": true,
-  "css.validate": false,
-  "scss.validate": false,
   "[scss]": {
     "editor.formatOnSave": true,
   },
