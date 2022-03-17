@@ -24,6 +24,7 @@ module.exports = {
     '@typescript-eslint/consistent-type-definitions': ['off', 'type'],
     '@typescript-eslint/no-empty-interface': 'warn',
     '@typescript-eslint/no-unsafe-assignment': 'off',
-    '@typescript-eslint/no-unsafe-member-access': 'off'
+    '@typescript-eslint/no-unsafe-member-access': 'off',
+    'node/no-extraneous-import': 'off'
   }
 };

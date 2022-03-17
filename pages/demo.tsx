@@ -1,6 +1,5 @@
 import { GetStaticPropsContext, NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-// eslint-disable-next-line node/no-extraneous-import
 import { useTranslation } from 'react-i18next';
 
 export async function getStaticProps({ locale }: GetStaticPropsContext) {
@@ -15,7 +14,7 @@ const Demo: NextPage = () => {
   return (
     <div>
       <span>{t('toggleLanguage')}</span>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <h1 className="text-3xl font-bold underline"> Hello world!</h1>
     </div>
   );
 };
