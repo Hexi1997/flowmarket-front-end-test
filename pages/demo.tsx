@@ -14,7 +14,9 @@ const Demo: NextPage = () => {
   return (
     <div>
       <span>{t('toggleLanguage')}</span>
-      <h1 className="text-3xl font-bold underline"> Hello world!</h1>
+      <h1 className="text-3xl font-bold underline border-2 border-orange-500">
+        Hello world!
+      </h1>
     </div>
   );
 };
