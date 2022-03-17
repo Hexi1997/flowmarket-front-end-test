@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 import { GetStaticPropsContext, NextPage } from 'next';
+import { useRouter } from 'next/router';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTheme } from 'next-themes';
 import { useTranslation } from 'react-i18next';
@@ -16,11 +17,23 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
 }
 
 const Demo: NextPage = () => {
-  const { t } = useTranslation('common');
+  const { t, i18n } = useTranslation('common');
   const { theme, setTheme } = useTheme();
+  const router = useRouter();
+  const handleLocaleChange = (data: string) => {
+    router
+      .replace(router.pathname, router.pathname, { locale: data })
+      .catch(console.error);
+  };
   return (
     <div className={styles.container}>
-      <span>{t('toggleLanguage')}</span>
+      <button
+        onClick={() => {
+          handleLocaleChange(i18n.language === 'zh' ? 'en' : 'zh');
+        }}
+      >
+        {t('toggleLanguage')}
+      </button>
       <h1 className="text-3xl font-bold underline border-2 border-orange-500">
         Hello world!
       </h1>
@@ -29,7 +42,7 @@ const Demo: NextPage = () => {
           Toggle Mode
         </button>
       </div>
-      <h1 className="text-black dark:text-white">111111</h1>
+      <h1 className="text-black dark:text-red-900">111111</h1>
     </div>
   );
 };
