@@ -10,6 +10,7 @@ import { useTranslation } from 'react-i18next';
 import styles from '@/styles/Demo.module.scss';
 
 export async function getStaticProps({ locale }: GetStaticPropsContext) {
+  console.log(process.env.BASE_URI);
   return {
     props: {
       ...(await serverSideTranslations(locale || '', ['common']))

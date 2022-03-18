@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-const serviceBasePath = '';
+import AppConfig from '../utils/config';
 
 const instance = axios.create({
-  baseURL: serviceBasePath
+  baseURL: AppConfig.baseUri
 });
 
 export function getData<T>(url: string) {
