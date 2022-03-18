@@ -21,6 +21,7 @@ const Demo: NextPage = () => {
   const { t, i18n } = useTranslation('common');
   const { theme, setTheme } = useTheme();
   const router = useRouter();
+
   const handleLocaleChange = useCallback(() => {
     router
       .replace(router.pathname, router.pathname, {
@@ -28,6 +29,7 @@ const Demo: NextPage = () => {
       })
       .catch(console.error);
   }, [router, i18n]);
+
   return (
     <div className={styles.container}>
       <button onClick={handleLocaleChange}>{t('toggleLanguage')}</button>

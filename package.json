@@ -13,6 +13,8 @@
     "submodule": "git submodule update --force --recursive --init --remote && git submodule update --remote --merge"
   },
   "dependencies": {
+    "axios": "^0.26.1",
+    "classnames": "^2.3.1",
     "next": "12.1.0",
     "next-i18next": "^10.5.0",
     "next-themes": "^0.1.1",
