@@ -7,6 +7,15 @@ const nextConfig = {
   i18n,
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')]
+  },
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/home',
+        permanent: true
+      }
+    ];
   }
 };
 

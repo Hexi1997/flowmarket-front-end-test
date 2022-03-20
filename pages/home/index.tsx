@@ -1,15 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
-import axios from 'axios';
 import { GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTheme } from 'next-themes';
-import { useCallback, useEffect } from 'react';
+import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { getData } from '@/services/request';
-import styles from '@/styles/Demo.module.scss';
+import styles from './_index.module.scss';
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
@@ -19,7 +17,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   };
 };
 
-const Demo = () => {
+const Home = () => {
   const { t, i18n } = useTranslation('common');
   const { theme, setTheme } = useTheme();
   const router = useRouter();
@@ -33,7 +31,7 @@ const Demo = () => {
   }, [router, i18n]);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.Home}>
       <button onClick={handleLocaleChange}>{t('toggleLanguage')}</button>
       <h1 className="text-3xl font-bold underline border-2 border-orange-500">
         Hello world!
@@ -48,4 +46,4 @@ const Demo = () => {
   );
 };
 
-export default Demo;
+export default Home;

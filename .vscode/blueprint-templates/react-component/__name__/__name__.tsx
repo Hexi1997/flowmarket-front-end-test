@@ -1,6 +1,6 @@
 import cn from 'classnames';
 
-import styles from './{{name}}.module.less';
+import styles from './{{name}}.module.scss';
 
 interface {{name}}Props {
   className?: string;
