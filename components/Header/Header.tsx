@@ -89,12 +89,12 @@ export function Header(props: HeaderProps) {
       className={cn(
         styles.Header,
         className,
-        'sticky px-12 py-4 shadow-md flex items-center space-x-4'
+        'sticky top-0 z-10 flex items-center space-x-4 bg-white px-12 py-4 shadow-md dark:bg-black'
       )}
     >
       {/* logo area */}
       <Link href="/">
-        <span className="text-base text-stone-800 font-semibold hover:cursor-pointer">
+        <span className="text-base font-semibold text-stone-800 hover:cursor-pointer">
           Flow Market
         </span>
       </Link>
@@ -103,10 +103,10 @@ export function Header(props: HeaderProps) {
         <input
           type="text"
           placeholder="Search items and collections"
-          className="w-96 h-9 border-2 rounded-full px-12 text-sm focus:outline-none text-stone-500"
+          className="h-9 w-96 rounded-full border-2 px-12 text-sm text-stone-500 focus:outline-none"
         />
         <div className="absolute top-2 left-4">
-          <Image src={searchImg} className="w-5 h-5" />
+          <Image src={searchImg} className="h-5 w-5" />
         </div>
       </div>
       {/* nav area */}
@@ -117,9 +117,9 @@ export function Header(props: HeaderProps) {
               <Link href={item.link}>
                 <a
                   className={cn(
-                    'text-neutral-700 text-xs px-4 py-1',
+                    'px-4 py-1 text-xs text-neutral-700',
                     focusMenuItem?.name === item.name
-                      ? 'bg-green-500 rounded-full text-white'
+                      ? 'rounded-full bg-themeGreen text-white'
                       : ''
                   )}
                 >
@@ -131,12 +131,12 @@ export function Header(props: HeaderProps) {
         </ul>
       </nav>
       {/* locale change area */}
-      <div className="flex items-center justify-center cursor-pointer">
-        <Image src={localeImg} className="w-5 h-5" />
+      <div className="flex cursor-pointer items-center justify-center">
+        <Image src={localeImg} className=" h-5 w-5" />
       </div>
       {/* user info area */}
-      <div className="flex items-center justify-center cursor-pointer">
-        <Image src={infoImg} className="w-5 h-5" />
+      <div className="flex cursor-pointer items-center justify-center">
+        <Image src={infoImg} className="h-5 w-5" />
       </div>
     </header>
   );
