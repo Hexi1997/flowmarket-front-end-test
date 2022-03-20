@@ -1,24 +1,25 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
-import { GetStaticPropsContext, NextPage } from 'next';
+import axios from 'axios';
+import { GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTheme } from 'next-themes';
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { getData } from '@/services/request';
 import styles from '@/styles/Demo.module.scss';
 
-export async function getStaticProps({ locale }: GetStaticPropsContext) {
-  console.log(process.env.BASE_URI);
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
       ...(await serverSideTranslations(locale || '', ['common']))
     }
   };
-}
+};
 
-const Demo: NextPage = () => {
+const Demo = () => {
   const { t, i18n } = useTranslation('common');
   const { theme, setTheme } = useTheme();
   const router = useRouter();

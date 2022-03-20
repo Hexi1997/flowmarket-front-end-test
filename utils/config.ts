@@ -3,18 +3,18 @@ interface IAppConfig {
 }
 
 const defaultConfig: IAppConfig = {
-  baseUri: 'develop.api.com'
+  baseUri: 'dev.api.com'
 };
+
 let AppConfig: IAppConfig = defaultConfig;
+
 switch (process.env.NODE_ENV) {
   case 'development':
-    AppConfig = {
-      baseUri: 'develop.api.com'
-    };
+    AppConfig = defaultConfig;
     break;
   case 'test':
     AppConfig = {
-      baseUri: 'test.api.com'
+      baseUri: 'staging.api.com'
     };
     break;
   case 'production':
@@ -24,9 +24,6 @@ switch (process.env.NODE_ENV) {
     break;
 
   default:
-    AppConfig = {
-      baseUri: 'develop.api.com'
-    };
     break;
 }
 
