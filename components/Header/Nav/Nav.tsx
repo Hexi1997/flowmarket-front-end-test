@@ -102,31 +102,39 @@ export function Nav(props: NavProps) {
   return (
     <div className={cn(styles.Nav, className)}>
       <nav>
-        <ul className="flex items-center space-x-2">
+        <ul className="flex items-center space-x-2 h-16">
           {menus.map((item) => (
-            <li key={item.name} className="relative">
+            <li
+              key={item.name}
+              className="relative"
+              onMouseEnter={() => {
+                setHoverMenuName(item.name);
+              }}
+              onMouseLeave={() => {
+                setHoverMenuName('');
+              }}
+            >
               <Link href={item.link}>
                 <a
-                  onMouseEnter={() => {
-                    setHoverMenuName(item.name);
-                  }}
                   className={cn(
-                    'px-4 py-2 text-sm text-neutral-700',
-                    focusMenuItem?.name === item.name
-                      ? 'rounded-full bg-themeGreen text-white'
-                      : ''
+                    'text-sm text-neutral-700 h-16 flex items-center'
                   )}
                 >
-                  {item.name.toUpperCase()}
+                  <span
+                    className={cn(
+                      'px-4 py-2',
+                      focusMenuItem?.name === item.name
+                        ? 'rounded-full bg-themeGreen text-white'
+                        : ''
+                    )}
+                  >
+                    {item.name.toUpperCase()}
+                  </span>
                 </a>
               </Link>
               {item.sub && item.sub.length > 0 && hoverMenuName === item.name && (
-                <RoundedContainer className="absolute top-[46px]">
-                  <ul
-                    onMouseLeave={() => {
-                      setHoverMenuName('');
-                    }}
-                  >
+                <RoundedContainer className="absolute top-16">
+                  <ul>
                     {item.sub.map((subitem) => (
                       <li
                         key={subitem.name}

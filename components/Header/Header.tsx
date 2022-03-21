@@ -22,7 +22,7 @@ export function Header(props: HeaderProps) {
       className={cn(
         styles.Header,
         className,
-        'sticky top-0 z-10 flex items-center space-x-4 bg-white px-12 py-4 shadow-md dark:bg-black'
+        'sticky top-0 z-10 flex items-center space-x-4 bg-white px-12 shadow-md dark:bg-black'
       )}
     >
       {/* logo area */}
