@@ -1,7 +1,17 @@
 import cn from 'classnames';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useMemo, useState } from 'react';
+
+import allImg from '@/assets/images/header/all.svg';
+import artImg from '@/assets/images/header/art.svg';
+import foodImg from '@/assets/images/header/food.svg';
+import moviesImg from '@/assets/images/header/movies.svg';
+import musicImg from '@/assets/images/header/music.svg';
+import photographyImg from '@/assets/images/header/photography.svg';
+import sportsImg from '@/assets/images/header/sports.svg';
+import starsImg from '@/assets/images/header/stars.svg';
 
 import styles from './Nav.module.scss';
 
@@ -12,6 +22,7 @@ interface NavProps {
 interface IMenu {
   name: string;
   link: string;
+  icon?: string;
   sub?: IMenu[];
 }
 
@@ -26,35 +37,43 @@ export const menus: IMenu[] = [
     sub: [
       {
         name: 'all',
-        link: '/collections/all'
+        link: '/collections/all',
+        icon: allImg
       },
       {
         name: 'art',
-        link: '/collections/art'
+        link: '/collections/art',
+        icon: artImg
       },
       {
         name: 'sports',
-        link: '/collections/sports'
+        link: '/collections/sports',
+        icon: sportsImg
       },
       {
         name: 'music',
-        link: '/collections/music'
+        link: '/collections/music',
+        icon: musicImg
       },
       {
         name: 'movies',
-        link: '/collections/movies'
+        link: '/collections/movies',
+        icon: moviesImg
       },
       {
         name: 'photography',
-        link: '/collections/photography'
+        link: '/collections/photography',
+        icon: photographyImg
       },
       {
         name: 'food',
-        link: '/collections/food'
+        link: '/collections/food',
+        icon: foodImg
       },
       {
         name: 'stars',
-        link: '/collections/food'
+        link: '/collections/food',
+        icon: starsImg
       }
     ]
   },
@@ -121,8 +140,9 @@ export function Nav(props: NavProps) {
                       }}
                     >
                       <Link href={subitem.link}>
-                        <a className="block w-full h-full pt-3 pl-3 text-sm">
-                          {subitem.name.toUpperCase()}
+                        <a className="w-full h-full pl-3 text-sm flex items-center space-x-4">
+                          <Image src={subitem.icon || ''} width="22" />
+                          <span>{subitem.name.toUpperCase()}</span>
                         </a>
                       </Link>
                     </li>
