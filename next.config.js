@@ -14,6 +14,11 @@ const nextConfig = {
         source: '/',
         destination: '/home',
         permanent: true
+      },
+      {
+        source: '/collections',
+        destination: '/collections/all',
+        permanent: true
       }
     ];
   }

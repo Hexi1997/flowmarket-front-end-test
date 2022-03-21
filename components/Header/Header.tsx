@@ -1,14 +1,12 @@
 import cn from 'classnames';
-import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-
-import infoImg from '@/assets/images/header/admin.svg';
 
 import styles from './Header.module.scss';
 import { LocaleSwitch } from './LocaleSwitch';
 import { Nav } from './Nav';
 import { Search } from './Search';
+import { UserInfo } from './UserInfo';
 
 interface HeaderProps {
   className?: string;
@@ -22,7 +20,7 @@ export function Header(props: HeaderProps) {
       className={cn(
         styles.Header,
         className,
-        'sticky top-0 z-10 flex items-center space-x-4 bg-white px-12 shadow-md dark:bg-black'
+        'sticky top-0 z-10 flex items-center space-x-4 bg-white px-12 shadow-md dark:bg-black text-[#333333]'
       )}
     >
       {/* logo area */}
@@ -31,16 +29,10 @@ export function Header(props: HeaderProps) {
           Flow Market
         </span>
       </Link>
-      {/* search area */}
       <Search />
-      {/* nav area */}
       <Nav />
-      {/* locale change area */}
       <LocaleSwitch />
-      {/* user info area */}
-      <div className="flex cursor-pointer items-center justify-center ">
-        <Image src={infoImg} className="h-5 w-5" />
-      </div>
+      <UserInfo />
     </header>
   );
 }

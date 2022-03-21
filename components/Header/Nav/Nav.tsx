@@ -73,14 +73,14 @@ export const menus: IMenu[] = [
       },
       {
         name: 'stars',
-        link: '/collections/food',
+        link: '/collections/stars',
         icon: starsImg
       }
     ]
   },
   {
-    name: 'activies',
-    link: '/activies'
+    name: 'activities',
+    link: '/activities'
   },
   {
     name: 'create',
@@ -141,6 +141,9 @@ export function Nav(props: NavProps) {
                         className={cn(
                           'w-48 h-10 hover:bg-themeGreen hover:text-white'
                         )}
+                        onClick={() => {
+                          setHoverMenuName('');
+                        }}
                       >
                         <Link href={subitem.link}>
                           <a className="w-full h-full pl-3 text-sm flex items-center space-x-4">

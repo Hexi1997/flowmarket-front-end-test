@@ -31,6 +31,7 @@ export function LocaleSwitch(props: LocaleSwitchProps) {
   const handleLocaleChange = useCallback(
     (language: string) => {
       return () => {
+        setIsShowLocaleSubMenu(false);
         router
           .replace(router.pathname, router.pathname, {
             locale: language
