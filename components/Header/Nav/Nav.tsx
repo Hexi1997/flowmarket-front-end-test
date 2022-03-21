@@ -12,6 +12,7 @@ import musicImg from '@/assets/images/header/music.svg';
 import photographyImg from '@/assets/images/header/photography.svg';
 import sportsImg from '@/assets/images/header/sports.svg';
 import starsImg from '@/assets/images/header/stars.svg';
+import { RoundedContainer } from '@/components/RoundedContainer';
 
 import styles from './Nav.module.scss';
 
@@ -91,7 +92,6 @@ export function Nav(props: NavProps) {
   const { className } = props;
   const router = useRouter();
   const [hoverMenuName, setHoverMenuName] = useState('');
-  const [hoverSubMenuName, setHoverSubMenuName] = useState('');
 
   const focusMenuItem = useMemo(() => {
     const routeArr = router.asPath.split('/');
@@ -121,33 +121,29 @@ export function Nav(props: NavProps) {
                 </a>
               </Link>
               {item.sub && item.sub.length > 0 && hoverMenuName === item.name && (
-                <ul
-                  onMouseLeave={() => {
-                    setHoverMenuName('');
-                    setHoverSubMenuName('');
-                  }}
-                  className="absolute top-[46px] rounded-lg border-2 bg-white shadow-lg overflow-hidden"
-                >
-                  {item.sub.map((subitem) => (
-                    <li
-                      key={subitem.name}
-                      className={cn(
-                        'w-48 h-10',
-                        hoverSubMenuName === subitem.name ? 'bg-slate-50' : ''
-                      )}
-                      onMouseEnter={() => {
-                        setHoverSubMenuName(subitem.name);
-                      }}
-                    >
-                      <Link href={subitem.link}>
-                        <a className="w-full h-full pl-3 text-sm flex items-center space-x-4">
-                          <Image src={subitem.icon || ''} width="22" />
-                          <span>{subitem.name.toUpperCase()}</span>
-                        </a>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+                <RoundedContainer className="absolute top-[46px]">
+                  <ul
+                    onMouseLeave={() => {
+                      setHoverMenuName('');
+                    }}
+                  >
+                    {item.sub.map((subitem) => (
+                      <li
+                        key={subitem.name}
+                        className={cn(
+                          'w-48 h-10 hover:bg-themeGreen hover:text-white'
+                        )}
+                      >
+                        <Link href={subitem.link}>
+                          <a className="w-full h-full pl-3 text-sm flex items-center space-x-4">
+                            <Image src={subitem.icon || ''} width="22" />
+                            <span>{subitem.name.toUpperCase()}</span>
+                          </a>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </RoundedContainer>
               )}
             </li>
           ))}

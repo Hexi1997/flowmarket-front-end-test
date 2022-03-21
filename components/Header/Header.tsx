@@ -4,9 +4,9 @@ import Link from 'next/link';
 import React from 'react';
 
 import infoImg from '@/assets/images/header/admin.svg';
-import localeImg from '@/assets/images/header/locale.svg';
 
 import styles from './Header.module.scss';
+import { LocaleSwitch } from './LocaleSwitch';
 import { Nav } from './Nav';
 import { Search } from './Search';
 
@@ -36,9 +36,7 @@ export function Header(props: HeaderProps) {
       {/* nav area */}
       <Nav />
       {/* locale change area */}
-      <div className="flex cursor-pointer items-center justify-center">
-        <Image src={localeImg} className=" h-5 w-5" />
-      </div>
+      <LocaleSwitch />
       {/* user info area */}
       <div className="flex cursor-pointer items-center justify-center ">
         <Image src={infoImg} className="h-5 w-5" />
