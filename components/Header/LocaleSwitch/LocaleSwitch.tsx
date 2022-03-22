@@ -35,7 +35,7 @@ export function LocaleSwitch(props: LocaleSwitchProps) {
   }, []);
 
   return (
-    <div className={cn(styles.LocaleSwitch, className)}>
+    <div className={cn(styles.LocaleSwitch, className, 'hidden sm:block')}>
       <div
         className="relative flex cursor-pointer items-center justify-center h-16"
         onMouseEnter={() => {

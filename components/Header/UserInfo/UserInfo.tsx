@@ -2,6 +2,7 @@ import cn from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
+import { useWindowSize } from 'react-use';
 
 import infoImg from '@/assets/images/header/admin.svg';
 import collectionsImg from '@/assets/images/header/collections.svg';
@@ -55,19 +56,25 @@ export function UserInfo(props: UserInfoProps) {
   const [hoverSubMenuTitle, setHoverSubMenuTitle] = useState('');
   const [isShowUserInfo, setIsShowUserInfo] = useState(false);
   const [isHoverSignOut, setIsHoverSignOut] = useState(false);
+  const { width } = useWindowSize();
 
   return (
     <div className={cn(styles.UserInfo, className)}>
       <div
-        className="pt-[1px] h-16 flex cursor-pointer items-center justify-center relative "
+        className="p-4 h-16 flex cursor-pointer items-center justify-center relative z-20 sm:p-0"
         onMouseEnter={() => {
-          setIsShowUserInfo(true);
+          if (width > 640) {
+            setIsShowUserInfo(true);
+          }
         }}
         onMouseLeave={() => {
           setIsShowUserInfo(false);
         }}
+        onClick={() => {
+          setIsShowUserInfo(!isShowUserInfo);
+        }}
       >
-        <Image src={infoImg} className="h-5 w-5" />
+        <Image src={infoImg} />
         {isShowUserInfo && (
           <RoundedContainer className="absolute top-16 -left-40 flex flex-col text-base">
             <span className="pt-6 pb-2 px-[18px]">0x88b4b153184...7c1bd</span>
