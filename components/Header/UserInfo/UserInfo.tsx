@@ -59,7 +59,7 @@ export function UserInfo(props: UserInfoProps) {
   return (
     <div className={cn(styles.UserInfo, className)}>
       <div
-        className="pl-2 h-16 flex cursor-pointer items-center justify-center relative "
+        className="pt-[1px] h-16 flex cursor-pointer items-center justify-center relative "
         onMouseEnter={() => {
           setIsShowUserInfo(true);
         }}

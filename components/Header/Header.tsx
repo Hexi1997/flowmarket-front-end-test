@@ -5,6 +5,7 @@ import React from 'react';
 import styles from './Header.module.scss';
 import { LocaleSwitch } from './LocaleSwitch';
 import { Nav } from './Nav';
+import { MobileNav } from './Nav/MobileNav';
 import { Search } from './Search';
 import { UserInfo } from './UserInfo';
 
@@ -34,6 +35,7 @@ export function Header(props: HeaderProps) {
         <Nav />
         <LocaleSwitch />
         <UserInfo />
+        <MobileNav />
       </div>
     </header>
   );

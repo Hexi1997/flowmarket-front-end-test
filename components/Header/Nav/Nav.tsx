@@ -79,10 +79,6 @@ export const menus: IMenu[] = [
     ]
   },
   {
-    name: 'activities',
-    link: '/activities'
-  },
-  {
     name: 'create',
     link: '/create'
   }
