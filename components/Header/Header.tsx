@@ -20,7 +20,7 @@ export function Header(props: HeaderProps) {
       className={cn(
         styles.Header,
         className,
-        'sticky top-0 z-10 flex items-center space-x-4 bg-white px-12 shadow-md dark:bg-black text-[#333333]'
+        'sticky top-0 z-10 flex items-center justify-between space-x-4 bg-white px-12 shadow-md dark:bg-black text-[#333333]'
       )}
     >
       {/* logo area */}
@@ -30,9 +30,11 @@ export function Header(props: HeaderProps) {
         </span>
       </Link>
       <Search />
-      <Nav />
-      <LocaleSwitch />
-      <UserInfo />
+      <div className="flex items-center space-x-4">
+        <Nav />
+        <LocaleSwitch />
+        <UserInfo />
+      </div>
     </header>
   );
 }

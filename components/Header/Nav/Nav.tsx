@@ -100,7 +100,7 @@ export function Nav(props: NavProps) {
     }
   }, [router.asPath]);
   return (
-    <div className={cn(styles.Nav, className)}>
+    <div className={cn(styles.Nav, className, 'hidden lg:block')}>
       <nav>
         <ul className="flex items-center space-x-2 h-16">
           {menus.map((item) => (

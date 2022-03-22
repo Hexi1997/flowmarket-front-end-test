@@ -17,7 +17,7 @@ export function Search(props: SearchProps) {
       <input
         type="text"
         placeholder="Search items and collections"
-        className="h-9 w-96 rounded-full border-2 px-12 text-sm text-stone-500 focus:outline-none"
+        className="h-9 w-full max-w-[456px] rounded-full border-2 px-12 text-sm text-stone-500 focus:outline-none"
       />
       <div className="absolute top-2 left-4">
         <Image src={searchImg} className="h-5 w-5" />
