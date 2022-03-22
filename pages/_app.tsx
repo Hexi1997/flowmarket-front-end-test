@@ -7,12 +7,16 @@ import { ThemeProvider } from 'next-themes';
 
 import { Layout } from '@/components/Layout';
 
+import { I18nextProvider } from '../assets/i18n/index';
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute="class">
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <I18nextProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </I18nextProvider>
     </ThemeProvider>
   );
 }

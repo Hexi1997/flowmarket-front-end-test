@@ -1,8 +1,13 @@
 import cn from 'classnames';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
 import { useCallback, useState } from 'react';
 
+import {
+  Languages,
+  LanguageType,
+  switchLanguage,
+  useTranslation
+} from '@/assets/i18n';
 import localeImg from '@/assets/images/header/locale.svg';
 import { RoundedContainer } from '@/components/RoundedContainer';
 
@@ -12,35 +17,22 @@ interface LocaleSwitchProps {
   className?: string;
 }
 
-const languages = [
-  {
-    title: 'English',
-    value: 'en'
-  },
-  {
-    title: '中文',
-    value: 'zh'
-  }
-];
+const languages = Object.keys(Languages).map((item) => ({
+  value: item,
+  title: Languages[item].subMenuLabel
+}));
 
 export function LocaleSwitch(props: LocaleSwitchProps) {
   const { className } = props;
-  const router = useRouter();
+  const { i18n } = useTranslation();
   const [isShowLocaleSubMenu, setIsShowLocaleSubMenu] = useState(false);
 
-  const handleLocaleChange = useCallback(
-    (language: string) => {
-      return () => {
-        setIsShowLocaleSubMenu(false);
-        router
-          .replace(router.pathname, router.pathname, {
-            locale: language
-          })
-          .catch(console.error);
-      };
-    },
-    [router]
-  );
+  const handleLocaleChange = useCallback((language: string) => {
+    return () => {
+      setIsShowLocaleSubMenu(false);
+      switchLanguage(language as LanguageType);
+    };
+  }, []);
 
   return (
     <div className={cn(styles.LocaleSwitch, className)}>
@@ -54,7 +46,9 @@ export function LocaleSwitch(props: LocaleSwitchProps) {
         }}
       >
         <Image src={localeImg} className="h-5 w-5" />
-        <span className="ml-1">{router.locale === 'zh' ? '中文' : 'EN'}</span>
+        <span className="ml-1">
+          {Languages[i18n.language || '']?.headerLabel}
+        </span>
         {isShowLocaleSubMenu && (
           <RoundedContainer className="absolute top-16 -left-8">
             <ul>

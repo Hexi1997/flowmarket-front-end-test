@@ -4,3 +4,4 @@ build
 public
 .vscode
 .husky
+assets/i18n/flowmarket-frontend-copywriter/*
