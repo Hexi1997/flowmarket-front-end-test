@@ -4,6 +4,7 @@ import Image from 'next/image';
 import maskImg from '@/assets/images/home/mask.png';
 import { Button } from '@/components/Common/Button';
 
+import { ImageSwiper } from './ImageSwiper';
 import styles from './SectionFirstScreen.module.scss';
 interface SectionFirstScreenProps {
   className?: string;
@@ -50,7 +51,7 @@ export function SectionFirstScreen(props: SectionFirstScreenProps) {
             </Button>
           </div>
         </div>
-        <div>image area</div>
+        <ImageSwiper />
       </div>
     </div>
   );
