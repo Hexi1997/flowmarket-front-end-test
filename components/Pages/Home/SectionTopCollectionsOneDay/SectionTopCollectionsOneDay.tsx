@@ -1,6 +1,7 @@
 import cn from 'classnames';
 
 import collectionIconImg from '@/assets/images/home/usericon2.png';
+import { Button } from '@/components/Common/Button';
 import { SectionTitle } from '@/components/SectionTitle';
 import { TopRank } from '@/components/TopRank';
 
@@ -96,6 +97,9 @@ export function SectionTopCollectionsOneDay(
           );
         })}
       </div>
+      <Button className="mx-auto mt-[44px] mb-[70px] w-[289px] h-[40px] !rounded-full">
+        GO TO RANKINGS
+      </Button>
     </div>
   );
 }

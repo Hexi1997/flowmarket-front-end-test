@@ -4,6 +4,7 @@ import React from 'react';
 
 import { SectionFirstScreen } from '@/components/Pages/Home/SectionFirstScreen';
 import { SectionHotBids } from '@/components/Pages/Home/SectionHotBids';
+import { SectionHotCollections } from '@/components/Pages/Home/SectionHotCollections';
 import { SectionLatest } from '@/components/Pages/Home/SectionLatest';
 import { SectionTopCollectionsOneDay } from '@/components/Pages/Home/SectionTopCollectionsOneDay';
 
@@ -18,6 +19,7 @@ const Home = () => {
         <SectionLatest />
         <SectionHotBids />
         <SectionTopCollectionsOneDay />
+        <SectionHotCollections />
       </div>
     </>
   );
