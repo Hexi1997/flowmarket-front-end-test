@@ -21,7 +21,7 @@ export function Button(props: ButtonProps) {
         styles.Button,
         type === 'Primary' ? 'bg-themeGreen hover:bg-green-500 text-white' : '',
         type === 'Default' ? 'bg-white hover:bg-gray-50 text-[#333333]' : '',
-        'flex items-center justify-center shadow-lg hover:font-bold transition-all duration-300 rounded-lg',
+        'flex items-center justify-center shadow-lg hover:shadow-xl hover:font-bold transition-all duration-300 rounded-lg',
         className
       )}
     >

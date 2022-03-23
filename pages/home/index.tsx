@@ -5,6 +5,7 @@ import React from 'react';
 import { SectionFirstScreen } from '@/components/Pages/Home/SectionFirstScreen';
 import { SectionHotBids } from '@/components/Pages/Home/SectionHotBids';
 import { SectionLatest } from '@/components/Pages/Home/SectionLatest';
+import { SectionTopCollectionsOneDay } from '@/components/Pages/Home/SectionTopCollectionsOneDay';
 
 import styles from './_index.module.scss';
 
@@ -16,6 +17,7 @@ const Home = () => {
         <SectionFirstScreen />
         <SectionLatest />
         <SectionHotBids />
+        <SectionTopCollectionsOneDay />
       </div>
     </>
   );
