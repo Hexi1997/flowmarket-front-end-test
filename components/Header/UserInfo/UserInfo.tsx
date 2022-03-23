@@ -92,7 +92,8 @@ export function UserInfo(props: UserInfoProps) {
                 onClick={() => {
                   console.log('click add');
                 }}
-                className="w-full h-8"
+                type="Primary"
+                className="w-full h-8 !rounded-full"
               >
                 Add Funds
               </Button>

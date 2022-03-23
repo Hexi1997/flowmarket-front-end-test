@@ -25,7 +25,7 @@ export default function MobileLanguageToggle() {
         }}
         checkmarkType={STYLE_TYPE.toggle_round}
       >
-        Language: {Languages[i18n.language].subMenuLabel}
+        Language: {Languages[i18n.language]?.subMenuLabel}
       </Checkbox>
     </div>
   );
