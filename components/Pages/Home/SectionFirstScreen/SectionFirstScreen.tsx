@@ -30,7 +30,7 @@ export function SectionFirstScreen(props: SectionFirstScreenProps) {
       </div>
       <div
         className={cn(
-          'flex flex-col justify-between items-center h-[calc(100vh_-_64px)] lg:flex-row'
+          'flex flex-col justify-between items-center min-h-[calc(100vh_-_64px)] lg:flex-row'
         )}
       >
         <div>

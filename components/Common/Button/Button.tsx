@@ -5,7 +5,7 @@ import styles from './Button.module.scss';
 
 interface ButtonProps {
   className?: string;
-  type: 'Primary' | 'Default';
+  type?: 'Primary' | 'Default';
   children: ReactNode;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onClick?: any;

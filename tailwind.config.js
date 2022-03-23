@@ -1,3 +1,4 @@
+/* eslint-disable node/no-unpublished-require */
 module.exports = {
   darkMode: 'class',
   content: [
@@ -11,5 +12,5 @@ module.exports = {
       }
     }
   },
-  plugins: []
+  plugins: [require('@tailwindcss/line-clamp')]
 };
