@@ -61,8 +61,13 @@ export function ImageSwiper(props: ImageSwiperProps) {
   const [currentImageIndex, setCurrentImgIndex] = useState(0);
 
   return (
-    <div className={cn(styles.ImageSwiper, className)}>
-      <div className={styles.cardContainer}>
+    <div className={cn(styles.ImageSwiper, className, 'pr-4')}>
+      <div
+        className={cn(
+          styles.cardContainer,
+          'w-72 h-72 sm:w-[385px] sm:h-[385px]'
+        )}
+      >
         <div
           className={cn(styles.controller, styles.right)}
           onClick={() => {

@@ -30,12 +30,14 @@ export function SectionFirstScreen(props: SectionFirstScreenProps) {
       </div>
       <div
         className={cn(
-          'flex flex-row justify-between items-center h-[calc(100vh_-_64px)]'
+          'flex flex-col justify-between items-center h-[calc(100vh_-_64px)] lg:flex-row'
         )}
       >
         <div>
-          <h1 className="text-[52px] font-bold">Flow Marketplace</h1>
-          <p className="max-w-[670px] mt-[9px] mb-[51px] text-2xl font-medium">
+          <h1 className="text-[32px] font-bold sm:text-[52px] pt-16 sm:pt-0">
+            Flow Marketplace
+          </h1>
+          <p className="text-lg max-w-[670px] mt-[9px] mb-[51px] sm:text-2xl font-medium">
             The most useful NFT marketplace in the web3.0 world, you can quickly
             create your NFT or buy any type of collection that interests you!
           </p>
