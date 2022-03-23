@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  overflow-x: hidden;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: min(1280px, 100% - 40px);
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.resetContainer {
+  margin-left: calc(-1 * ((100vw - 100%) / 2));
+  margin-right: calc(-1 * ((100vw - 100%) / 2));
+  padding-left: calc(1 * ((100vw - 100%) / 2));
+  padding-right: calc(1 * ((100vw - 100%) / 2));
+  min-height: calc(100vh - 64px);
+}
