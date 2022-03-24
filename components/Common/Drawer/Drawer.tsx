@@ -13,7 +13,7 @@ export function Drawer(props: DrawerProps) {
         }
       }}
     >
-      <div className="h-full w-full">{props.children}</div>
+      {props.children}
     </BaseUiDrawer>
   );
 }
