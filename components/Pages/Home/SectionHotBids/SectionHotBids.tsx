@@ -1,4 +1,5 @@
 import cn from 'classnames';
+import { useTranslation } from 'react-i18next';
 
 import hotBidsImg1 from '@/assets/images/home/hot_bids_2.png';
 import hotBidsImg2 from '@/assets/images/home/hot_bids_3.png';
@@ -84,10 +85,12 @@ const data: IITem[] = [
 
 export function SectionHotBids(props: SectionHotBidsProps) {
   const { className } = props;
-
+  const { t } = useTranslation();
   return (
     <div className={cn(styles.SectionHotBids, className)}>
-      <SectionTitle className="mt-16 mb-10">Hot bids</SectionTitle>
+      <SectionTitle className="mt-16 mb-10">
+        {t('HOME_SECTION_HOT_BIDS_TITLE')}
+      </SectionTitle>
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-y-8">
         {data.map((item, index) => (
           <ItemCard data={item} key={index} />

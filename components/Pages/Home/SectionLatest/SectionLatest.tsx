@@ -1,6 +1,7 @@
 import cn from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
 
 import mockImg1 from '@/assets/images/home/latest_1.png';
 import mockImg2 from '@/assets/images/home/latest_2.png';
@@ -45,10 +46,13 @@ const data = [
 ];
 export function SectionLatest(props: SectionLatestProps) {
   const { className } = props;
+  const { t } = useTranslation();
 
   return (
     <div className={cn(styles.SectionLatest, className, 'resetContainer')}>
-      <SectionTitle className="mb-10">Latest</SectionTitle>
+      <SectionTitle className="mb-10">
+        {t('HOME_SECTION_LATEST_TITLE')}
+      </SectionTitle>
       <div
         className={cn(
           'grid grid-cols-1 grid-rows-3 gap-8 lg:grid-cols-2 lg:grid-rows-2 xl:grid-cols-3 xl:grid-rows-1 xl:gap-8'

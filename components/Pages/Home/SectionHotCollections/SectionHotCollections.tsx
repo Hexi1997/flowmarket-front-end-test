@@ -1,4 +1,5 @@
 import cn from 'classnames';
+import { useTranslation } from 'react-i18next';
 
 import hotCollectonImg1 from '@/assets/images/home/hot_collection_2.png';
 import hotCollectonImg2 from '@/assets/images/home/hot_collection_3.png';
@@ -56,10 +57,13 @@ const data: IHotCollection[] = [
 
 export function SectionHotCollections(props: SectionHotCollectionsProps) {
   const { className } = props;
+  const { t } = useTranslation();
 
   return (
     <div className={cn(styles.SectionHotCollections, className)}>
-      <SectionTitle className="mb-10">Hot Collections</SectionTitle>
+      <SectionTitle className="mb-10">
+        {t('HOME_SECTION_HOT_COLLECTIONS')}
+      </SectionTitle>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
         {data.map((item, index) => (
           <HotCollectionCard key={index} data={item} />

@@ -1,4 +1,5 @@
 import cn from 'classnames';
+import { useTranslation } from 'react-i18next';
 
 import collectionIconImg from '@/assets/images/home/usericon2.png';
 import { Button } from '@/components/Common/Button';
@@ -79,11 +80,11 @@ export function SectionTopCollectionsOneDay(
   props: SectionTopCollectionsOneDayProps
 ) {
   const { className } = props;
-
+  const { t } = useTranslation();
   return (
     <div className={cn(styles.SectionTopCollectionsOneDay, className)}>
       <SectionTitle className="mt-[78px] mb-[45px]">
-        Top collections in 1 day{' '}
+        {t('HOME_SECTION_TOP_COLLECTION_1_DAY')}
       </SectionTitle>
       <div className="pl-4 sm:pl-0 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
         {[0, 1, 2].map((_, index) => {
@@ -98,7 +99,7 @@ export function SectionTopCollectionsOneDay(
         })}
       </div>
       <Button className="mx-auto mt-[44px] mb-[70px] w-[289px] h-[40px] !rounded-full">
-        GO TO RANKINGS
+        {t('HOME_GO_TO_RANK_BUTTON_TEXT')}
       </Button>
     </div>
   );

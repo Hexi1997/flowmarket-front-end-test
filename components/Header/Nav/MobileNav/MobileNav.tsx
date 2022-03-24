@@ -4,6 +4,7 @@ import cn from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { useToggle } from 'react-use';
 
 import { Drawer } from '@/components/Common/Drawer';
@@ -21,6 +22,7 @@ interface MobileNavProps {
 export function MobileNav(props: MobileNavProps) {
   const { className } = props;
   const { IconFont } = useIconFont();
+  const { t } = useTranslation();
   const [isShowDrawer, toggleShowDrawer] = useToggle(false);
 
   return (
@@ -46,7 +48,7 @@ export function MobileNav(props: MobileNavProps) {
                   <Panel
                     renderPanelContent={false}
                     key={item.name}
-                    title={item.name.toUpperCase()}
+                    title={t(item.name)}
                   >
                     {item.sub.map((subItem, index) => {
                       const isLast = item.sub?.length === index + 1;
@@ -63,7 +65,7 @@ export function MobileNav(props: MobileNavProps) {
                               className="flex w-full h-full justify-between items-center"
                               onClick={toggleShowDrawer}
                             >
-                              <span>{subItem.name.toUpperCase()}</span>
+                              <span>{t(subItem.name)}</span>
                               <Image src={subItem.icon || ''} width="22" />
                             </a>
                           </Link>
@@ -79,7 +81,7 @@ export function MobileNav(props: MobileNavProps) {
                       className="w-full h-[52px] flex items-center border-solid border-b-[1px] border-gray-200 px-5 text-[16px] cursor-pointer"
                       onClick={toggleShowDrawer}
                     >
-                      {item.name.toUpperCase()}
+                      {t(item.name)}
                     </a>
                   </Link>
                 );

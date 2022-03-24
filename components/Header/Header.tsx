@@ -1,6 +1,7 @@
 import cn from 'classnames';
 import Link from 'next/link';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import styles from './Header.module.scss';
 import { LocaleSwitch } from './LocaleSwitch';
@@ -15,6 +16,7 @@ interface HeaderProps {
 
 export function Header(props: HeaderProps) {
   const { className } = props;
+  const { t } = useTranslation();
 
   return (
     <header
@@ -28,7 +30,7 @@ export function Header(props: HeaderProps) {
       <div className="flex items-center flex-1 space-x-4">
         <Link href="/">
           <span className="text-base font-semibold text-stone-800 hover:cursor-pointer">
-            Flow Market
+            {t('COMMON_MARKET_NAME')}
           </span>
         </Link>
         <Search className="hidden sm:block max-w-[456px]" />

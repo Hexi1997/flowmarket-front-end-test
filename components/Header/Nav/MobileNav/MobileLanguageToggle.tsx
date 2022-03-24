@@ -8,7 +8,7 @@ import {
   useTranslation
 } from '@/assets/i18n';
 export default function MobileLanguageToggle() {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const [checked, setChecked] = useState(false);
 
   const handleLocaleChange = useCallback((language: string) => {
@@ -25,7 +25,7 @@ export default function MobileLanguageToggle() {
         }}
         checkmarkType={STYLE_TYPE.toggle_round}
       >
-        Language: {Languages[i18n.language]?.subMenuLabel}
+        {t('COMMON_LANGUAGE')}: {Languages[i18n.language]?.subMenuLabel}
       </Checkbox>
     </div>
   );

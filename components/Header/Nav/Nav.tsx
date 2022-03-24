@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import allImg from '@/assets/images/header/all.svg';
 import artImg from '@/assets/images/header/art.svg';
@@ -29,57 +30,57 @@ interface IMenu {
 
 export const menus: IMenu[] = [
   {
-    name: 'market',
+    name: 'MENU_MARKET',
     link: '/market'
   },
   {
-    name: 'collections',
+    name: 'MENU_COLLECTIONS',
     link: '/collections',
     sub: [
       {
-        name: 'all',
+        name: 'MENU_COLLECTIONS_ALL',
         link: '/collections/all',
         icon: allImg
       },
       {
-        name: 'art',
+        name: 'MENU_COLLECTIONS_ART',
         link: '/collections/art',
         icon: artImg
       },
       {
-        name: 'sports',
+        name: 'MENU_COLLECTIONS_SPORTS',
         link: '/collections/sports',
         icon: sportsImg
       },
       {
-        name: 'music',
+        name: 'MENU_COLLECTIONS_MUSIC',
         link: '/collections/music',
         icon: musicImg
       },
       {
-        name: 'movies',
+        name: 'MENU_COLLECTIONS_MOVIES',
         link: '/collections/movies',
         icon: moviesImg
       },
       {
-        name: 'photography',
+        name: 'MENU_COLLECTIONS_PHOTOGRAPHY',
         link: '/collections/photography',
         icon: photographyImg
       },
       {
-        name: 'food',
+        name: 'MENU_COLLECTIONS_FOOD',
         link: '/collections/food',
         icon: foodImg
       },
       {
-        name: 'stars',
+        name: 'MENU_COLLECTIONS_STARS',
         link: '/collections/stars',
         icon: starsImg
       }
     ]
   },
   {
-    name: 'create',
+    name: 'MENU_CREATE',
     link: '/create'
   }
 ];
@@ -88,11 +89,11 @@ export function Nav(props: NavProps) {
   const { className } = props;
   const router = useRouter();
   const [hoverMenuName, setHoverMenuName] = useState('');
-
+  const { t } = useTranslation();
   const focusMenuItem = useMemo(() => {
     const routeArr = router.asPath.split('/');
     if (routeArr.length >= 2) {
-      return menus.find((item) => item.name === routeArr[1]);
+      return menus.find((item) => item.link === '/' + routeArr[1]);
     }
   }, [router.asPath]);
   return (
@@ -124,7 +125,7 @@ export function Nav(props: NavProps) {
                         : ''
                     )}
                   >
-                    {item.name.toUpperCase()}
+                    {t(item.name)}
                   </span>
                 </a>
               </Link>
@@ -144,7 +145,7 @@ export function Nav(props: NavProps) {
                         <Link href={subitem.link}>
                           <a className="w-full h-full pl-3 text-sm flex items-center space-x-4">
                             <Image src={subitem.icon || ''} width="22" />
-                            <span>{subitem.name.toUpperCase()}</span>
+                            <span>{t(subitem.name)}</span>
                           </a>
                         </Link>
                       </li>

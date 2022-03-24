@@ -2,6 +2,7 @@ import cn from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useWindowSize } from 'react-use';
 
 import infoImg from '@/assets/images/header/admin.svg';
@@ -28,25 +29,25 @@ const links = [
   {
     icon: profileImg,
     icon_white: profileWhiteImg,
-    title: 'Profile',
+    title: 'MENU_USER_PROFILE',
     link: '/profile'
   },
   {
     icon: collectionsImg,
     icon_white: collectionsWhiteImg,
-    title: 'My Collections',
+    title: 'MENU_USER_COLLECTIONS',
     link: '/mycollections'
   },
   {
     icon: favoritesImg,
     icon_white: favoritesWhiteImg,
-    title: 'My Favorites',
+    title: 'MENU_USER_FAVORITES',
     link: '/myfavorites'
   },
   {
     icon: settingsImg,
     icon_white: settingsWhiteImg,
-    title: 'Settings',
+    title: 'MENU_USER_SETTINGS',
     link: '/settings'
   }
 ];
@@ -57,6 +58,7 @@ export function UserInfo(props: UserInfoProps) {
   const [isShowUserInfo, setIsShowUserInfo] = useState(false);
   const [isHoverSignOut, setIsHoverSignOut] = useState(false);
   const { width } = useWindowSize();
+  const { t } = useTranslation();
 
   return (
     <div className={cn(styles.UserInfo, className)}>
@@ -79,7 +81,7 @@ export function UserInfo(props: UserInfoProps) {
           <RoundedContainer className="absolute top-16 -left-40 flex flex-col text-base">
             <span className="pt-6 pb-2 px-[18px]">0x88b4b153184...7c1bd</span>
             <div className="rounded-lg shadow-xl flex p-5 flex-col space-y-2 pb-3 mx-[18px]">
-              <span className="font-medium">Balance</span>
+              <span className="font-medium">{t('COMMON_BALANCE')}</span>
               <div className="flex justify-between items-center">
                 <span className="text-[#666666] text-sm">FLOW</span>
                 <span className="font-bold text-xl">0.014</span>
@@ -95,7 +97,7 @@ export function UserInfo(props: UserInfoProps) {
                 type="Primary"
                 className="w-full h-8 !rounded-full"
               >
-                Add Funds
+                {t('MENU_USER_BUTTON_ADD_FUNDS')}
               </Button>
             </div>
             <ul className="pt-4 flex flex-col w-full">
@@ -124,7 +126,7 @@ export function UserInfo(props: UserInfoProps) {
                       }
                       width="16"
                     />
-                    <span>{item.title}</span>
+                    <span>{t(item.title)}</span>
                   </a>
                 </Link>
               ))}
@@ -151,7 +153,7 @@ export function UserInfo(props: UserInfoProps) {
                   src={isHoverSignOut ? signOutWhiteImg : signOutImg}
                   width="16"
                 />
-                <span>Sign Out</span>
+                <span>{t('MENU_USER_SIGN_OUT')}</span>
               </div>
             </div>
           </RoundedContainer>

@@ -1,5 +1,6 @@
 import cn from 'classnames';
 import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
 
 import maskImg from '@/assets/images/home/mask.png';
 import { Button } from '@/components/Common/Button';
@@ -12,6 +13,7 @@ interface SectionFirstScreenProps {
 
 export function SectionFirstScreen(props: SectionFirstScreenProps) {
   const { className } = props;
+  const { t } = useTranslation();
 
   return (
     <div
@@ -35,21 +37,20 @@ export function SectionFirstScreen(props: SectionFirstScreenProps) {
       >
         <div>
           <h1 className="text-[32px] font-bold sm:text-[52px] pt-16 sm:pt-0">
-            Flow Marketplace
+            {t('HOME_MARKET_NAME')}
           </h1>
           <p className="text-lg max-w-[670px] mt-[9px] mb-[51px] sm:text-2xl font-medium">
-            The most useful NFT marketplace in the web3.0 world, you can quickly
-            create your NFT or buy any type of collection that interests you!
+            {t('HOME_MARKET_DESC')}
           </p>
           <div className="flex">
             <Button type="Primary" className="w-[105px] h-9 !rounded-lg">
-              Create
+              {t('HOME_CREATE_BUTTON_TEXT')}
             </Button>
             <Button
               type="Default"
               className="w-[105px] h-9 ml-[14px] !rounded-lg"
             >
-              Market
+              {t('HOME_MARKET_BUTTON_TEXT')}
             </Button>
           </div>
         </div>
