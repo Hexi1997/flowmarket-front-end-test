@@ -14,6 +14,10 @@ const nextConfig = {
         permanent: true
       }
     ];
+  },
+  images: {
+    loader: 'akamai',
+    path: ''
   }
 };
 
