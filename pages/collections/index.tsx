@@ -1,2 +1,8 @@
-import redirect from 'nextjs-redirect';
-export default redirect('/collections/all');
+import Router from 'next/router';
+import { useMount } from 'react-use';
+export default function Index() {
+  useMount(() => {
+    void Router.replace('/collections/all');
+  });
+  return <></>;
+}
