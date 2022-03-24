@@ -4,9 +4,9 @@ import cn from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import { useToggle } from 'react-use';
 
+import { useTranslation } from '@/assets/i18n';
 import { Drawer } from '@/components/Common/Drawer';
 import { useIconFont } from '@/utils/hooks/useIconFont';
 

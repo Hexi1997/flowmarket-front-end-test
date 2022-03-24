@@ -1,6 +1,6 @@
 import cn from 'classnames';
-import { useTranslation } from 'react-i18next';
 
+import { useTranslation } from '@/assets/i18n';
 import collectionIconImg from '@/assets/images/home/usericon2.png';
 import { Button } from '@/components/Common/Button';
 import { SectionTitle } from '@/components/SectionTitle';

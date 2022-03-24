@@ -1,7 +1,8 @@
 import cn from 'classnames';
 import Link from 'next/link';
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+
+import { useTranslation } from '@/assets/i18n';
 
 import styles from './Header.module.scss';
 import { LocaleSwitch } from './LocaleSwitch';

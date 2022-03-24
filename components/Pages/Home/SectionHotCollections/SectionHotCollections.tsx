@@ -1,6 +1,6 @@
 import cn from 'classnames';
-import { useTranslation } from 'react-i18next';
 
+import { useTranslation } from '@/assets/i18n';
 import hotCollectonImg1 from '@/assets/images/home/hot_collection_2.png';
 import hotCollectonImg2 from '@/assets/images/home/hot_collection_3.png';
 import hotCollectonImg3 from '@/assets/images/home/hot_collection_4.png';

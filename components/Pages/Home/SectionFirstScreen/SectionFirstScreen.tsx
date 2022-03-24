@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import Image from 'next/image';
-import { useTranslation } from 'react-i18next';
 
+import { useTranslation } from '@/assets/i18n';
 import maskImg from '@/assets/images/home/mask.png';
 import { Button } from '@/components/Common/Button';
 

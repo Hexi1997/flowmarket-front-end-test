@@ -3,8 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useMemo, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 
+import { useTranslation } from '@/assets/i18n';
 import allImg from '@/assets/images/header/all.svg';
 import artImg from '@/assets/images/header/art.svg';
 import foodImg from '@/assets/images/header/food.svg';

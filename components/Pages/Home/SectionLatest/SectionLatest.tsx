@@ -1,8 +1,8 @@
 import cn from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useTranslation } from 'react-i18next';
 
+import { useTranslation } from '@/assets/i18n';
 import mockImg1 from '@/assets/images/home/latest_1.png';
 import mockImg2 from '@/assets/images/home/latest_2.png';
 import mockImg3 from '@/assets/images/home/latest_3.png';
