@@ -2,7 +2,7 @@ import '../styles/reset.css';
 import '../styles/fonts.css';
 import '../styles/globals.css';
 
-import { BaseProvider, LightTheme } from 'baseui';
+import { BaseProvider } from 'baseui';
 import type { AppProps } from 'next/app';
 import { appWithTranslation } from 'next-i18next';
 import { ThemeProvider } from 'next-themes';
